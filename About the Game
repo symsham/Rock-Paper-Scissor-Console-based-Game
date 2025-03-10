@@ -1,0 +1,96 @@
+Game Description
+
+Rock-Paper-Scissors is a classic and simple hand game that is often played between two people. It's a fun, quick decision-making game that tests strategy, psychology, and sometimes pure luck.
+
+Game Rules
+
+Players can choose one of three options:
+
+0: Paper
+
+1: Scissors
+
+2: Rock
+
+Winning Conditions:
+
+Paper beats Rock
+
+Rock beats Scissors
+
+Scissors beat Paper
+
+If both choices are the same, the result is a draw.
+
+Key Features
+
+1.Intelligent Computer Strategy: The computer predicts the player's most frequent move and counters it.
+Tracks Game Statistics: The game records the number of:
+
+Wins
+
+Losses
+
+Draws
+2. Tracks Player's Move History: Counts how many times the player chooses Rock, Paper, or Scissors.✅ Play Again Option: The game continues until the player decides to stop.
+
+Detailed Analysis
+
+a. Computer's Strategy
+
+The computer analyzes the player's previous choices to predict the most frequent move.
+
+Based on this prediction, the computer strategically selects a move that counters the predicted choice:
+
+If Player's Frequent Move = Rock, the computer selects Paper.
+
+If Player's Frequent Move = Paper, the computer selects Scissors.
+
+If Player's Frequent Move = Scissors, the computer selects Rock.
+
+This predictive strategy introduces an element of artificial intelligence, making the game more challenging and engaging.
+
+b. Outcome Calculation
+
+The outcome is determined by comparing the player’s choice with the computer’s choice using the following logic:
+
+public static int getResult(int playerChoice, int computerChoice) {
+    if (playerChoice == computerChoice) return 2; // Draw
+    if ((playerChoice == ROCK && computerChoice == SCISSORS) ||
+        (playerChoice == PAPER && computerChoice == ROCK) ||
+        (playerChoice == SCISSORS && computerChoice == PAPER)) {
+        return 0; // Player wins
+    }
+    return 1; // Computer wins
+}
+
+c. Game Flow
+
+The player inputs their choice.
+
+The computer selects a move based on the player’s history.
+
+The system compares choices to determine the winner.
+
+Statistics are updated after each round.
+
+The player can choose to continue or end the game.
+
+d. Statistics Tracking
+
+Win Counter: Tracks the total number of wins.
+
+Loss Counter: Tracks the total number of losses.
+
+Draw Counter: Tracks the total number of draws.
+
+Move History: Tracks how many times the player selected Rock, Paper, or Scissors to predict future moves.
+
+*Future Enhancements
+
+a. Adding different difficulty levels (Easy, Medium, Hard)
+b. Introducing graphical UI for improved user experience
+c. Implementing multiplayer mode for more engagement
+d. Adding sound effects for better game feedback
+e. Developing a scoring system with bonus points for win streaks
+
